@@ -48,6 +48,15 @@ public class LionTest {
         int kittensCount = lion.getKittens();
 
         assertEquals(3, kittensCount);
+    }
+
+    @Test
+    public void getKittensShouldCallPredatorGetKittensOnce() throws Exception {
+        when(mockPredator.getKittens()).thenReturn(3);
+
+        lion = new Lion("Самец", mockPredator);
+        lion.getKittens();
+
         verify(mockPredator, times(1)).getKittens();
     }
 
@@ -60,6 +69,16 @@ public class LionTest {
         List<String> actualFood = lion.getFood();
 
         assertEquals(expectedFood, actualFood);
+    }
+
+    @Test
+    public void getFoodShouldCallPredatorEatMeatOnce() throws Exception {
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
+        when(mockPredator.eatMeat()).thenReturn(expectedFood);
+
+        lion = new Lion("Самец", mockPredator);
+        lion.getFood();
+
         verify(mockPredator, times(1)).eatMeat();
     }
 

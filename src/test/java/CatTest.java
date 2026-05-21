@@ -25,22 +25,29 @@ public class CatTest {
     }
 
     @Test
-    public void testGetSound_ShouldReturnMeow() {
+    public void testGetSoundShouldReturnMeow() {
         String sound = cat.getSound();
         assertEquals("Мяу", sound);
     }
 
     @Test
-    public void testGetFood_ShouldReturnPredatorFood() throws Exception {
+    public void testGetFoodShouldReturnPredatorFood() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         when(mockFeline.eatMeat()).thenReturn(expectedFood);
         List<String> actualFood = cat.getFood();
         assertEquals(expectedFood, actualFood);
+    }
+
+    @Test
+    public void testGetFoodShouldCallEatMeatOnce() throws Exception {
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
+        when(mockFeline.eatMeat()).thenReturn(expectedFood);
+        cat.getFood();
         verify(mockFeline, times(1)).eatMeat();
     }
 
     @Test
-    public void testGetFood_WhenFelineThrowsException_ShouldPropagateException()  throws Exception {
+    public void testGetFoodWhenFelineThrowsExceptionShouldPropagateException()  throws Exception {
         when(mockFeline.eatMeat()).thenThrow(new RuntimeException("Ошибка БД"));
 
         try {

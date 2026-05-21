@@ -25,40 +25,42 @@ public class LionAlexTest {
     }
 
     @Test
-    public void testConstructor_ShouldCreateMaleLion() {
+    public void testConstructorShouldCreateMaleLion() {
         assertTrue(alexLion.doesHaveMane());
     }
 
     @Test
-    public void testGetFriends_ShouldReturnCorrectFriendsList() {
+    public void testGetFriendsShouldReturnCorrectFriendsList() {
         List<String> friends = alexLion.getFriends();
-
         List<String> expectedFriends = List.of("Марти", "Глория", "Мелман");
         assertEquals(expectedFriends, friends);
-        assertEquals(3, friends.size());
-        assertTrue(friends.contains("Марти"));
-        assertTrue(friends.contains("Глория"));
-        assertTrue(friends.contains("Мелман"));
     }
 
     @Test
-    public void testGetPlaceOfLiving_ShouldReturnNYZoo() {
+    public void testGetPlaceOfLivingShouldReturnNYZoo() {
         String place = alexLion.getPlaceOfLiving();
         assertEquals("Нью-Йоркский зоопарк", place);
     }
 
     @Test
-    public void testGetKittens_ShouldReturnZero() {
+    public void testGetKittensShouldReturnZero() {
         int kittens = alexLion.getKittens();
         assertEquals(0, kittens);
     }
 
     @Test
-    public void testGetFood_ShouldDelegateToPredator() throws Exception {
+    public void testGetFoodShouldDelegateToPredator() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         when(mockPredator.eatMeat()).thenReturn(expectedFood);
         List<String> actualFood = alexLion.getFood();
         assertEquals(expectedFood, actualFood);
+    }
+
+    @Test
+    public void testGetFoodShouldCallEatMeatOnce() throws Exception {
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
+        when(mockPredator.eatMeat()).thenReturn(expectedFood);
+        alexLion.getFood();
         verify(mockPredator, times(1)).eatMeat();
     }
 

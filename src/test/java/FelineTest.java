@@ -17,41 +17,45 @@ public class FelineTest {
     private Feline feline = new Feline();
 
     @Test
-    public void testEatMeat_ShouldReturnMeatList() throws Exception {
+    public void testEatMeatShouldReturnMeatList() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         List<String> actualFood = feline.eatMeat();
-
         assertEquals(expectedFood, actualFood);
+    }
+
+    @Test
+    public void testEatMeatShouldCallGetFoodWithPredator() throws Exception {
+        feline.eatMeat();
         verify(feline, times(1)).getFood("Хищник");
     }
 
     @Test
-    public void testGetFamily_ShouldReturnCatsFamily() {
+    public void testGetFamilyShouldReturnCatsFamily() {
         String family = feline.getFamily();
         assertEquals("Кошачьи", family);
     }
 
     @Test
-    public void testGetKittens_Default_ShouldReturnOne() {
+    public void testGetKittensDefaultShouldReturnOne() {
         int kittens = feline.getKittens();
         assertEquals(1, kittens);  // По умолчанию возвращает 1
     }
 
     @Test
-    public void testGetKittens_WithCount_ShouldReturnSpecifiedCount() {
+    public void testGetKittensWithCountShouldReturnSpecifiedCount() {
         int expectedCount = 5;
         int kittens = feline.getKittens(expectedCount);
         assertEquals(expectedCount, kittens);
     }
 
     @Test
-    public void testGetFood_WithHerbivore_ShouldReturnPlants() throws Exception {
+    public void testGetFoodWithHerbivoreShouldReturnPlants() throws Exception {
         List<String> food = feline.getFood("Травоядное");
         assertEquals(List.of("Трава", "Различные растения"), food);
     }
 
     @Test
-    public void testGetFood_WithUnknownKind_ShouldThrowException() {
+    public void testGetFoodWithUnknownKindShouldThrowException() {
         try {
             feline.getFood("Неизвестное");
             fail("Должно было выброситься исключение!");
