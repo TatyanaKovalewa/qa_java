@@ -40,14 +40,14 @@ src/
 │ └── Predator.java # Интерфейс для хищников
 │
 └── test/java/
-├── CatTest.java # Тесты для Cat с моками
-├── FelineTest.java # Прямые тесты для Feline
-├── FelineFoodParametrizedPositive.java # Параметризованные тесты (позитивные)
-├── FelineFoodParametrizedNegative.java # Параметризованные тесты (негативные)
-├── LionTest.java # Тесты для Lion с моками
-├── LionAlexTest.java # Тесты для LionAlex
-├── LionParametrizedPositive.java # Параметризованные тесты пола (позитивные)
-└── LionParametrizedNegative.java # Параметризованные тесты пола (негативные)
+  ├── CatTest.java # Тесты для Cat с моками
+  ├── FelineTest.java # Прямые тесты для Feline
+  ├── FelineFoodParametrizedPositive.java # Параметризованные тесты (позитивные)
+  ├── FelineFoodParametrizedNegative.java # Параметризованные тесты (негативные)
+  ├── LionTest.java # Тесты для Lion с моками
+  ├── LionAlexTest.java # Тесты для LionAlex
+  ├── LionParametrizedPositive.java # Параметризованные тесты пола (позитивные)
+  └── LionParametrizedNegative.java # Параметризованные тесты пола (негативные)
 ```
 
 ---
