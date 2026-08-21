@@ -25,7 +25,5 @@ hs_err_pid*
 # For Idea
 .idea/*
 
-# For jacoco
-target/*
-!target/site
-!target/site/jacoco
+# Артефакты сборки
+target/
