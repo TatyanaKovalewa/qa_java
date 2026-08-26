@@ -1,13 +1,13 @@
 # 🦁 Madagascar JUnit Mockito
 
-[![tests](https://github.com/TatyanaKovalewa/madagascar-junit-mockito/actions/workflows/tests.yml/badge.svg)](https://github.com/TatyanaKovalewa/madagascar-junit-mockito/actions/workflows/tests.yml)
+[![tests](https://github.com/TatyanaKovalewa/madagascar-unit-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/TatyanaKovalewa/madagascar-unit-tests/actions/workflows/tests.yml)
 [![Java](https://img.shields.io/badge/Java-11-orange)](https://openjdk.org/projects/jdk/11/)
 [![JUnit](https://img.shields.io/badge/JUnit-4-25A162)](https://junit.org/junit4/)
 [![Mockito](https://img.shields.io/badge/Mockito-78A641)](https://site.mockito.org/)
 
 **36 тестов, все проходят.** Отчёт о покрытии собирается в CI и публикуется автоматически:
 
-**👉 [Открыть отчёт JaCoCo](https://tatyanakovalewa.github.io/madagascar-junit-mockito/)**
+**👉 [Открыть отчёт JaCoCo](https://tatyanakovalewa.github.io/madagascar-unit-tests/)**
 
 | Класс | Строки | Ветки |
 |-------|--------|-------|
