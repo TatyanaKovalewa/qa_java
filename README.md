@@ -9,6 +9,8 @@
 
 **👉 [Открыть отчёт JaCoCo](https://tatyanakovalewa.github.io/madagascar-unit-tests/)**
 
+[![Отчёт JaCoCo](./docs/report.png)](https://tatyanakovalewa.github.io/madagascar-unit-tests/)
+
 | Класс | Строки | Ветки |
 |-------|--------|-------|
 | `Lion` | 11/11 | 4/4 |
